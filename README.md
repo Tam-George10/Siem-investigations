@@ -4,7 +4,7 @@ This repository documents a hands-on SOC investigation focused on identifying, a
 
 ---
 
-<h1>Real-World Scenario</h1>
+<h1>Investigation Scenario</h1>
 
 An IDS alert indicated suspicious process execution on a host in the HR department, suggesting a potential compromise. Analysis revealed the execution of tools commonly associated with network information gathering and scheduled task creation, confirming malicious behavior.  
 
@@ -61,6 +61,15 @@ All analysis was performed in a controlled environment to ensure safe handling o
   <li><b>Vim / Text Editors:</b> Used to review raw log data and extract relevant information</li>
 </ul>
 
+<h2>Utilities Used</h2>
+<p>
+<b>Oracle VirtualBox:</b> Provided an isolated sandbox environment for safely handling and analyzing potentially malicious files and logs.<br>
+<b>Vim / Nano / Notepad++:</b> Lightweight text editors used to review raw Windows Event Logs and extract relevant process execution data.<br>
+<b>Splunk Query Editor:</b> Used to build, test, and refine SPL queries for analysis of event logs and alert correlation.<br>
+<b>Browser / Network Tools:</b> Standard browsers and online tools (e.g., VirusTotal, WHOIS lookups) used for network artifact investigation, IP reputation, and malware source verification.
+</p>
+
+
 ---
 
 <h2>Investigation Findings</h2>
@@ -68,10 +77,10 @@ All analysis was performed in a controlled environment to ensure safe handling o
 > **Note:** Replace the placeholders below with your actual investigation details, screenshots, and queries.
 
 ### 1. Log Collection & Ingestion
-- Total number of process execution logs ingested for March 2022: `[INSERT NUMBER]`  
+- Total number of process execution logs ingested for March 2022: `[13,959]`  
 - Query used: see [`queries/march_logs.txt`](queries/march_logs.txt)  
 <p align="center">
-  <img src="screenshots/march_logs.png" width="80%" alt="March Logs"/>
+  <img src="https://i.imgur.com/5DPiDwT.png" width="80%" alt="March Logs"/>
 </p>
 
 ### 2. Alert Analysis & Triage
