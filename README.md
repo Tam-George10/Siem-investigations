@@ -78,18 +78,24 @@ All analysis was performed in a controlled environment to ensure safe handling o
 
 ### 1. Log Collection & Ingestion
 - Total number of process execution logs ingested for March 2022: `[13,959]`  
-- Query used: see [`queries/march_logs.txt`](queries/march_logs.txt)  
+- Query used: see [see Splunk_Queries/01_log_ingestion_explained.md](Splunk_Queries/01_log_ingestion_explained.md)  
 <p align="center">
   <img src="https://i.imgur.com/5DPiDwT.png" width="80%" alt="March Logs"/>
 </p>
 
 ### 2. Alert Analysis & Triage
 - IDS alert identified suspicious process execution on HR host  
-- Host: `[INSERT HOSTNAME]`  
-- Timeline of suspicious processes: `[INSERT TIMELINE]`  
+- Host: `[Amel1a]`  
+- Timeline of suspicious processes: `[3/5/22
+12:54:30.000 PM]`
+  - Query used: see [see Splunk_Queries/01_log_ingestion_explained.md](Splunk_Queries/01_log_ingestion_explained.md)
 <p align="center">
-  <img src="screenshots/ids_alert.png" width="80%" alt="IDS Alert"/>
+  <img src="https://i.imgur.com/zKAHm1c.png" width="80%" alt="IDS Alert"/>
 </p>
+<p align="center">
+  <img src="https://i.imgur.com/0GuScp6.png" width="80%" alt="IDS Alert"/>
+</p>
+
 
 ### 3. User Activity Correlation
 - Potential imposter account detected: `[INSERT USERNAME]`  
