@@ -78,7 +78,7 @@ All analysis was performed in a controlled environment to ensure safe handling o
 
 ### 1. Log Collection & Ingestion
 - Total number of process execution logs ingested for March 2022: `[13,959]`  
-- Query used: see [see Splunk_Queries/01_log_ingestion_explained.md](Splunk_Queries/01_log_ingestion_explained.md)  
+- Query used: 📄 Detailed query explanation [see Splunk_Queries/01_log_ingestion_explained.md](Splunk_Queries/01_log_ingestion_explained.md)  
 <p align="center">
   <img src="https://i.imgur.com/5DPiDwT.png" width="80%" alt="March Logs"/>
 </p>
@@ -88,7 +88,8 @@ All analysis was performed in a controlled environment to ensure safe handling o
 - Host: `[Amel1a]`  
 - Timeline of suspicious processes: `[3/5/22
 12:54:30.000 PM]`
-  - Query used: see [see Splunk_Queries/01_log_ingestion_explained.md](Splunk_Queries/01_log_ingestion_explained.md)
+  - Query used:📄 Detailed query explanation: [see Splunk_Queries/02_imposter_account_detection.md](Splunk_Queries/02_imposter_account_detection.md)
+
 <p align="center">
   <img src="https://i.imgur.com/zKAHm1c.png" width="80%" alt="IDS Alert"/>
 </p>
@@ -98,10 +99,11 @@ All analysis was performed in a controlled environment to ensure safe handling o
 
 
 ### 3. User Activity Correlation
-- Potential imposter account detected: `[INSERT USERNAME]`  
-- HR user observed running scheduled tasks: `[INSERT USERNAME]`  
+- HR user observed running scheduled tasks: `[Chris.Fort]`
+- Query used:📄 Detailed query explanation: [see Splunk_Queries/02_imposter_account_detection.md](Splunk_Queries/02_imposter_account_detection.md)
+
 <p align="center">
-  <img src="screenshots/user_activity.png" width="80%" alt="User Activity"/>
+  <img src="https://i.imgur.com/8HeRmVj.png" width="80%" alt="User Activity"/>
 </p>
 
 ### 4. Scheduled Task & LOLBIN Investigation
@@ -121,13 +123,6 @@ All analysis was performed in a controlled environment to ensure safe handling o
   <img src="screenshots/network_activity.png" width="80%" alt="Network Activity"/>
 </p>
 
-### 6. Artifact Collection & Documentation
-- SHA256 hash of downloaded file: `[INSERT HASH]`  
-- File size: `[INSERT SIZE]`  
-- Actual file extension: `[INSERT EXTENSION]`  
-<p align="center">
-  <img src="screenshots/artifact.png" width="80%" alt="Downloaded Artifact"/>
-</p>
 
 ---
 
