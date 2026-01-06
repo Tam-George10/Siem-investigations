@@ -107,10 +107,11 @@ All analysis was performed in a controlled environment to ensure safe handling o
 </p>
 
 ### 4. Scheduled Task & LOLBIN Investigation
-- HR user executing LOLBIN to download payload: `[INSERT USERNAME]`  
-- System process (LOLBIN) used: `[INSERT LOLBIN NAME]`  
+- HR user executing LOLBIN to download payload: `[Haroon]`  
+- System process (LOLBIN) used: `[Certutil.exe]`
+- Query used:📄 Detailed query explanation: [see Splunk_Queries/04_lolbin_payload_download.md](Splunk_Queries/04_lolbin_payload_download.md) 
 <p align="center">
-  <img src="screenshots/lolbin_execution.png" width="80%" alt="LOLBIN Execution"/>
+  <img src="https://i.imgur.com/M46QCGO.png" width="80%" alt="LOLBIN Execution"/>
 </p>
 
 ### 5. Network & Host Analysis
