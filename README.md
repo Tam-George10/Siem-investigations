@@ -114,15 +114,24 @@ All analysis was performed in a controlled environment to ensure safe handling o
   <img src="https://i.imgur.com/yY4GNKZ.png" width="80%" alt="LOLBIN Execution"/>
 </p>
 
-### 5. Network & Host Analysis
-- Date of binary execution: `[YYYY-MM-DD]`  
-- Third-party site accessed: `[INSERT SITE]`  
-- File saved on host from C2 server: `[INSERT FILENAME]`  
-- Malicious pattern/flag: `THM{..........}`  
-- URL connected to by infected host: `[INSERT URL]`  
+## 5. Network Analysis
+- **Third-party site accessed:** `[Controlc.com]`
+- **URL connected to by infected host:** `[hxxps://controlc[.]com/e4d11035
+]`
+- - Query used:📄 Detailed query explanation: [see Splunk_Queries/04_lolbin_payload_download.md](Splunk_Queries/04_lolbin_payload_download.md) 
+
 <p align="center">
-  <img src="screenshots/network_activity.png" width="80%" alt="Network Activity"/>
+  <img src="https://i.imgur.com/GN0HSRV.png" width="80%" alt="Network Activity"/>
 </p>
+
+## 6. Host Analysis
+- **Date of binary execution:** `[YYYY-MM-DD]`
+- **File saved on host from C2 server:** `[INSERT FILENAME]`
+
+<p align="center">
+  <img src="screenshots/host_activity.png" width="80%" alt="Host Activity"/>
+</p>
+
 
 
 ---
