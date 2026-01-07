@@ -118,18 +118,20 @@ All analysis was performed in a controlled environment to ensure safe handling o
 - **Third-party site accessed:** `[Controlc.com]`
 - **URL connected to by infected host:** `[hxxps://controlc[.]com/e4d11035
 ]`
-- - Query used:📄 Detailed query explanation: [see Splunk_Queries/04_lolbin_payload_download.md](Splunk_Queries/04_lolbin_payload_download.md) 
+- Query used:📄 Detailed query explanation: [see Splunk_Queries/05_Network_Analysis.md](Splunk_Queries/05_Network_Analysis.md) 
 
 <p align="center">
   <img src="https://i.imgur.com/GN0HSRV.png" width="80%" alt="Network Activity"/>
 </p>
 
 ## 6. Host Analysis
-- **Date of binary execution:** `[YYYY-MM-DD]`
-- **File saved on host from C2 server:** `[INSERT FILENAME]`
+- **Date of binary execution:** `[3/4/22
+10:38:28.000 AM]`
+- **File saved on host from C2 server:** `[Benign.exe]`
+- Query used:📄 Detailed query explanation: [see Splunk_Queries/04_lolbin_payload_download.md](Splunk_Queries/04_lolbin_payload_download.md) 
 
 <p align="center">
-  <img src="screenshots/host_activity.png" width="80%" alt="Host Activity"/>
+  <img src="https://i.imgur.com/bkEbQSQ.png" width="80%" alt="Host Activity"/>
 </p>
 
 
