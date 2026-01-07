@@ -111,7 +111,7 @@ All analysis was performed in a controlled environment to ensure safe handling o
 - System process (LOLBIN) used: `[Certutil.exe]`
 - Query used:📄 Detailed query explanation: [see Splunk_Queries/04_lolbin_payload_download.md](Splunk_Queries/04_lolbin_payload_download.md) 
 <p align="center">
-  <img src="https://i.imgur.com/M46QCGO.png" width="80%" alt="LOLBIN Execution"/>
+  <img src="https://i.imgur.com/yY4GNKZ.png" width="80%" alt="LOLBIN Execution"/>
 </p>
 
 ### 5. Network & Host Analysis
