@@ -136,6 +136,36 @@ All analysis was performed in a controlled environment to ensure safe handling o
 
 
 ---
+<h3>Indicators of Compromise (IOCs)</h3>
+<ul>
+  <li><b>Imposter Username:</b> Amel1a</li>
+  <li><b>Legitimate Lookalike Username:</b> Amelia</li>
+
+  <li><b>Compromised User Account:</b> Chris.fort</li>
+  <li><b>Compromised User Account:</b> Haroon</li>
+
+  <li><b>Affected Department:</b> Human Resources (HR)</li>
+  <li><b>Affected Host:</b> HR_02</li>
+
+  <li><b>Malicious Scheduled Task Name:</b> OfficUpdater</li>
+  <li><b>Persistence Mechanism:</b> Windows Scheduled Task (schtasks)</li>
+
+  <li><b>LOLBIN Used:</b> certutil.exe</li>
+
+  <li><b>Downloaded Payload Name:</b> Benign.exe</li>
+  <li><b>Payload Execution Date:</b> 2022-03-04</li>
+  <li><b>Payload Execution Time:</b> 10:38:28 AM</li>
+
+  <li><b>External Domain Contacted:</b> controlc[.]com</li>
+  <li><b>External URL:</b> https://controlc[.]com/e4d11035</li>
+
+  <li><b>Payload Source Type:</b> Third-party file hosting service</li>
+  <li><b>Log Source:</b> Windows Event Logs (Event ID 4688)</li>
+</ul>
+
+
+---
+
 
 <h2>MITRE ATT&amp;CK Mapping</h2>
 <ul>
