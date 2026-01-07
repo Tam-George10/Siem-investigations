@@ -57,14 +57,12 @@ All analysis was performed in a controlled environment to ensure safe handling o
 <ul>
   <li><b>Splunk:</b> SIEM platform used for log ingestion, querying, and correlation</li>
   <li><b>Windows Event Logs:</b> Primary source of process execution information (Event ID 4688)</li>
-  <li><b>VirusTotal / Sandbox:</b> Used for analysis of downloaded payloads</li>
   <li><b>Vim / Text Editors:</b> Used to review raw log data and extract relevant information</li>
 </ul>
 
 <h2>Utilities Used</h2>
 <p>
 <b>Oracle VirtualBox:</b> Provided an isolated sandbox environment for safely handling and analyzing potentially malicious files and logs.<br>
-<b>Vim / Nano / Notepad++:</b> Lightweight text editors used to review raw Windows Event Logs and extract relevant process execution data.<br>
 <b>Splunk Query Editor:</b> Used to build, test, and refine SPL queries for analysis of event logs and alert correlation.<br>
 <b>Browser / Network Tools:</b> Standard browsers and online tools (e.g., VirusTotal, WHOIS lookups) used for network artifact investigation, IP reputation, and malware source verification.
 </p>
@@ -74,7 +72,7 @@ All analysis was performed in a controlled environment to ensure safe handling o
 
 <h2>Investigation Findings</h2>
 
-> **Note:** Replace the placeholders below with your actual investigation details, screenshots, and queries.
+
 
 ### 1. Log Collection & Ingestion
 - Total number of process execution logs ingested for March 2022: `[13,959]`  
@@ -141,29 +139,57 @@ All analysis was performed in a controlled environment to ensure safe handling o
 
 <h2>MITRE ATT&amp;CK Mapping</h2>
 <ul>
-  <li><b>T1110 – Brute Force</b> (if applicable)</li>
-  <li><b>T1078 – Valid Accounts</b> (if accounts compromised)</li>
-  <li><b>T1059 – Command and Scripting Interpreter</b> (if LOLBIN/script used)</li>
-  <li><b>T1071 – Application Layer Protocol</b> (network-based data exfiltration)</li>
+  <li><b>T1036 – Masquerading</b><br/>
+      Imposter account <code>Amel1a</code> closely resembled a legitimate user (<code>Amelia</code>), indicating account masquerading.</li>
+
+  <li><b>T1078 – Valid Accounts</b><br/>
+      Legitimate HR user accounts (<code>Chris.fort</code>, <code>Haroon</code>) were used to execute malicious activity.</li>
+
+  <li><b>T1053.005 – Scheduled Task / Job: Scheduled Task</b><br/>
+      A scheduled task (<code>OfficUpdater</code>) was created to establish persistence and execute a malicious binary on system startup.</li>
+
+  <li><b>T1218 – Signed Binary Proxy Execution</b><br/>
+      The native Windows utility <code>certutil.exe</code> was abused as a Living-off-the-Land Binary (LOLBIN) to bypass security controls.</li>
+
+  <li><b>T1105 – Ingress Tool Transfer</b><br/>
+      A payload (<code>benign.exe</code>) was downloaded from an external source using <code>certutil.exe</code>.</li>
+
+  <li><b>T1071 – Application Layer Protocol</b><br/>
+      The infected host communicated with a third-party web service (<code>controlc[.]com</code>) over HTTP(S).</li>
 </ul>
+
 
 ---
 
-<h2>Final Assessment & Recommendations</h2>
+<h2>Final Assessment &amp; Recommendations</h2>
 <p>
-The investigation confirmed that suspicious process execution on the HR host represented malicious activity, including potential credential compromise and unauthorized payload download. Recommendations include:
+The investigation confirmed that the suspicious process execution activity observed on HR department hosts was the result of a confirmed compromise. Analysis of Windows process creation logs (Event ID 4688) revealed multiple stages of attacker activity, including account masquerading, persistence establishment, and malicious payload delivery using native system utilities.
 </p>
-<ul>
-  <li>Immediate password reset and account lockout for affected users</li>
-  <li>Blocking suspicious LOLBIN execution via endpoint controls</li>
-  <li>Blocking source IPs and domains in network security devices</li>
-  <li>Monitoring for additional anomalies across HR department hosts</li>
-  <li>Documenting indicators of compromise for SIEM correlation</li>
-</ul>
 
----
+<p>
+A suspicious imposter account (<code>Amel1a</code>) was identified during log review, closely resembling a legitimate user account (<code>Amelia</code>). Further analysis revealed abuse of valid HR user accounts (<code>Chris.fort</code> and <code>Haroon</code>) to execute scheduled tasks and download an external payload using the Living-off-the-Land Binary <code>certutil.exe</code>. The payload was retrieved from a third-party file-sharing service and successfully written to disk, confirming post-compromise activity.
+</p>
+
+<p>
+Based on the collected evidence, the following actions are recommended:
+</p>
+
+<ul>
+  <li><b>Immediate account remediation:</b> Reset passwords and review access privileges for all affected and related HR user accounts, including monitoring for additional imposter or lookalike usernames.</li>
+
+  <li><b>Persistence eradication:</b> Identify and remove unauthorized scheduled tasks, including the task named <code>OfficUpdater</code>, and verify system startup configurations across HR hosts.</li>
+
+  <li><b>LOLBIN abuse prevention:</b> Restrict or monitor execution of high-risk native utilities such as <code>certutil.exe</code> through endpoint protection policies and application control.</li>
+
+  <li><b>Network containment:</b> Block identified external infrastructure, including the defanged domain <code>controlc[.]com</code> and associated URLs, at network security and proxy layers.</li>
+
+  <li><b>Threat detection enhancement:</b> Create and deploy SIEM correlation rules to detect scheduled task creation, certutil-based downloads, and execution of binaries from temporary user directories.</li>
+
+  <li><b>Post-incident monitoring:</b> Increase monitoring across HR department systems for signs of lateral movement, repeated execution attempts, or additional payload retrieval.</li>
+</ul>
 
 <h3>Case Closure</h3>
 <p>
-The incident was successfully investigated, documented, and mitigated. All findings, logs, and artifacts have been preserved for SOC reporting and compliance purposes.
+The incident was successfully investigated and documented using available host-based telemetry. All identified Indicators of Compromise (IOCs), including user accounts, command-line artifacts, file names, and external URLs, have been preserved for SOC reporting and future detection. The case has been formally closed following validation of findings and implementation of recommended remediation actions.
 </p>
+
