@@ -83,7 +83,7 @@ All analysis was performed in a controlled environment to ensure safe handling o
 
 ### 2. Alert Analysis & Initial Triage
 - IDS alert identified suspicious process execution on HR host  
-- Host: `[Amel1a]`  
+- Suspicious Username Observed: `[Amel1a]`  
 - Timeline of suspicious processes: `[3/5/22
 12:54:30.000 PM]`
   - Query used:📄 Detailed query explanation: [see Splunk_Queries/02_imposter_account_detection.md](Splunk_Queries/02_imposter_account_detection.md)
