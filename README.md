@@ -81,7 +81,7 @@ All analysis was performed in a controlled environment to ensure safe handling o
   <img src="https://i.imgur.com/5DPiDwT.png" width="80%" alt="March Logs"/>
 </p>
 
-### 2. Alert Analysis & Triage
+### 2. Alert Analysis & Initial Triage
 - IDS alert identified suspicious process execution on HR host  
 - Host: `[Amel1a]`  
 - Timeline of suspicious processes: `[3/5/22
@@ -97,8 +97,8 @@ All analysis was performed in a controlled environment to ensure safe handling o
 
 
 ### 3. User Activity Correlation
-- HR user observed running scheduled tasks: `[Chris.Fort]`
-- Query used:📄 Detailed query explanation: [see Splunk_Queries/02_imposter_account_detection.md](Splunk_Queries/02_imposter_account_detection.md)
+- HR user observed running scheduled tasks: `[Chris.fort]`
+- Query used:📄 Detailed query explanation: [see Splunk_Queries/03_scheduled_task_hr_user.md](Splunk_Queries/03_scheduled_task_hr_user.md)
 
 <p align="center">
   <img src="https://i.imgur.com/8HeRmVj.png" width="80%" alt="User Activity"/>
