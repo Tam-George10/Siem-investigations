@@ -128,7 +128,8 @@ All analysis was performed in a controlled environment to ensure safe handling o
 - **Date of binary execution:** `[3/4/22
 10:38:28.000 AM]`
 - **File saved on host from C2 server:** `[Benign.exe]`
-- Query used:📄 Detailed query explanation: [see Splunk_Queries/04_lolbin_payload_download.md](Splunk_Queries/04_lolbin_payload_download.md) 
+- Query used:📄 Detailed query explanation: [see Splunk_Queries/06_Host_Analysis.md
+](Splunk_Queries/06_Host_Analysis.md) 
 
 <p align="center">
   <img src="https://i.imgur.com/bkEbQSQ.png" width="80%" alt="Host Activity"/>
